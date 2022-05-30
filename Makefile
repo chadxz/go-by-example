@@ -11,3 +11,7 @@ $(OUTPUT_DIR):
 
 out/%: %.go $(OUTPUT_DIR)
 	go build -o $(OUTPUT_DIR) $<
+
+clean:
+	rm -rf $(OUTPUT_DIR)
+.PHONY: clean
