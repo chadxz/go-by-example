@@ -1,8 +1,8 @@
 TOPDIR := $(shell pwd)
 OUTPUT_DIR := $(TOPDIR)/out/
 
-SOURCES := $(wildcard *.go)
-BINARIES := $(patsubst %.go, out/%, $(SOURCES))
+APP_SOURCES := $(filter-out $(wildcard *_test.go), $(wildcard *.go))
+BINARIES := $(patsubst %.go, out/%, $(APPS_ONLY))
 
 all: $(BINARIES)
 
